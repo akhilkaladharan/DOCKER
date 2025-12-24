@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  httpd:
+    image: httpd
+    container_name: apachecompose
+    ports:
+    - '9990:80'
+    volumes:
+    - volume01:/data
+    networks:
+    - network01
+volumes:
+  volume01:
+networks:
+  network01:
+    name: network01
+    driver: bridge
